@@ -1,0 +1,41 @@
+<html>
+ <head>
+   <title>abeshi</title>
+   <script src="/js/jquery.js"></script>
+   <script src="/js/main.js"></script>
+
+   <link rel="stylesheet" type="text/css" href="css/index.css">
+   <DIV STYLE="text-align:right;vertical-align:baseline;font-size:10pt;"><FORM name=serch action="javascript:wordserch()">文章内から検索：<INPUT name=q><INPUT type=button onClick="wordserch()" value="検索"></FORM></DIV>
+ </head>
+  <body>
+    <DIV ID="UR">
+    <b>私が考えた最強のpixivクローン</b>
+    <form method="post" id='ex_form' action="/" enctype="multipart/form-data">
+    <textarea name="ex_text" id="ex_text"></textarea>
+      <input type="file" name="file" value="file">
+      <input type="submit" name="submit" value="submit">
+    </form>
+
+
+    <% posts.each do |post| %>
+    <div class="tools">
+<span class="add-star" data-post-id="<%=post["id"]%>"id="<%=post["id"]%>"><%=
+post["star_count"]%></span>
+
+        </div>
+
+    <div align="center">
+
+
+  <div>
+    <img src="/uploads/<%= post['img_file_name'] %>">
+  </div>
+
+  <div>
+    <BR><a><%= post['text'] %></a>
+  </div>
+    </div>
+    <% end %>
+  </div>
+  </body>
+</html>

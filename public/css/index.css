@@ -1,0 +1,8 @@
+.add-star:before{content:"★";color:yellow;}
+.add-star {
+   cursor: pointer;
+}
+img {
+max-width: 400px;
+max-height: 400px;
+}
